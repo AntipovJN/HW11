@@ -1,5 +1,4 @@
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class App {
 
@@ -13,6 +12,7 @@ public class App {
         set2.add("1");
         set2.add("2");
         System.out.println(symmetricDifference(set1, set2));
+        reversePairedArraysElements();
 
     }
 
@@ -24,5 +24,24 @@ public class App {
         set2Copy.removeAll(set1Copy);
         set.addAll(set2Copy);
         return  set;
+    }
+    public static void reversePairedArraysElements() {
+        Scanner scanner = new Scanner(System.in);
+        Deque<Integer> arrayDeque = new ArrayDeque<>();
+        int i = 0;
+        while (scanner.hasNextInt()) {
+            if (i % 2 != 0) {
+                arrayDeque.add(scanner.nextInt());
+            } else {
+                scanner.nextInt();
+            }
+            i++;
+        }
+        StringBuilder sb = new StringBuilder();
+        for (i = 0; i < arrayDeque.size(); ) {
+            sb.append(arrayDeque.getLast()).append(" ");
+            arrayDeque.removeLast();
+        }
+        System.out.print(sb.toString());
     }
 }
