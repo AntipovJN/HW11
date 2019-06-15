@@ -23,8 +23,9 @@ public class App {
         set.removeAll(set2Copy);
         set2Copy.removeAll(set1Copy);
         set.addAll(set2Copy);
-        return  set;
+        return set;
     }
+
     public static void reversePairedArraysElements() {
         Scanner scanner = new Scanner(System.in);
         Deque<Integer> arrayDeque = new ArrayDeque<>();
