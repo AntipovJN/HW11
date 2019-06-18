@@ -1,6 +1,10 @@
-import java.util.*;
+import java.util.Deque;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.ArrayDeque;
 
-public class App {
+class App {
 
     public static void main(String[] args) {
         Set<String> set1 = new HashSet<>();
@@ -13,7 +17,6 @@ public class App {
         set2.add("2");
         System.out.println(symmetricDifference(set1, set2));
         reversePairedArraysElements();
-
     }
 
     public static <T> Set<T> symmetricDifference(Set<? extends T> set1, Set<? extends T> set2) {
