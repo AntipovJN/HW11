@@ -17,6 +17,20 @@ class App {
         set2.add("2");
         System.out.println(symmetricDifference(set1, set2));
         reversePairedArraysElements();
+        System.out.println(getCallerClassAndMethodName());
+        anotherMethod();
+            }
+
+    public static String getCallerClassAndMethodName() {
+        StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+        if (stackTraceElements.length < 4) {
+            return null;
+        }
+        return stackTraceElements[3].getClassName()+"#"+stackTraceElements[3].getMethodName();
+    }
+
+    private static void anotherMethod() {
+        System.out.println(getCallerClassAndMethodName());
     }
 
     public static <T> Set<T> symmetricDifference(Set<? extends T> set1, Set<? extends T> set2) {
